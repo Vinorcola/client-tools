@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "./lib",
+        "target": "ESNext",
+        "module": "ESNext",
+        "declaration": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "jsx": "react-jsx"
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}

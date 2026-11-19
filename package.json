@@ -1,0 +1,51 @@
+{
+  "name": "@vinorcola/client-tools",
+  "version": "1.0.0",
+  "private": false,
+  "homepage": "https://github.com/Vinorcola/client-tools#readme",
+  "bugs": {
+    "url": "https://github.com/Vinorcola/client-tools/issues"
+  },
+  "license": "MIT",
+  "author": "Vinorcola",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinorcola/client-tools.git"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    "./components": {
+      "default": "./lib/components/index.js"
+    },
+    "./http": {
+      "default": "./lib/http.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "vp fmt && vp lint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A .",
+    "postversion": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@vinorcola/dynamic-table": "^1.4.1",
+    "eslint-plugin-perfectionist": "^5.14.0",
+    "i18next": "^27.1.5",
+    "react": "^19.3.1",
+    "react-icons": "^5.7.0",
+    "react-router": "^8.5.2",
+    "react-select": "^5.10.2",
+    "typescript": "^7.0.2",
+    "vite-plus": "catalog:"
+  },
+  "dependencies": {
+    "@vinorcola/utils": "^1.0.3"
+  }
+}
