@@ -23,6 +23,9 @@
     "./http": {
       "default": "./lib/http.js"
     },
+    "./hydration": {
+      "default": "./lib/hydration.js"
+    },
     "./identity": {
       "default": "./lib/identity.js"
     }
