@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-import { ButtonContainer, LinkButton } from "./Button"
+import { ButtonContainer, LinkButton } from "./Button/index.js"
 
 export interface Action {
     target: string

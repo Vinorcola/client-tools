@@ -1,4 +1,4 @@
-import type { InputProps } from "."
+import type { InputProps } from "./index.js"
 
 export default function PriceInput(props: InputProps) {
     return (

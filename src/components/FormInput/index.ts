@@ -1,12 +1,12 @@
-export { default as BooleanInput } from "./BooleanInput"
-export { default as ChoiceInput, type Option as ChoiceOption } from "./ChoiceInput"
-export { default as DateInput } from "./DateInput"
-export { default as FileInput, type FileInputValue, type FileValue, type LocalFileValue } from "./FileInput"
-export { default as IntegerInput } from "./IntegerInput"
-export { default as PriceInput } from "./PriceInput"
-export { CLASSNAMES as SELECT_CLASSNAMES, type Option as SelectOption, STYLES as SELECT_STYLES } from "./Select"
-export { default as StringInput } from "./StringInput"
-export { default as TextInput } from "./TextInput"
+export { default as BooleanInput } from "./BooleanInput.js"
+export { default as ChoiceInput, type Option as ChoiceOption } from "./ChoiceInput.js"
+export { default as DateInput } from "./DateInput.js"
+export { default as FileInput, type FileInputValue, type FileValue, type LocalFileValue } from "./FileInput.js"
+export { default as IntegerInput } from "./IntegerInput.js"
+export { default as PriceInput } from "./PriceInput.js"
+export { CLASSNAMES as SELECT_CLASSNAMES, type Option as SelectOption, STYLES as SELECT_STYLES } from "./Select.js"
+export { default as StringInput } from "./StringInput.js"
+export { default as TextInput } from "./TextInput.js"
 
 export type InputValueFormater = (value: string) => string
 

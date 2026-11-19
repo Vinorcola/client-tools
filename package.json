@@ -35,7 +35,8 @@
   },
   "devDependencies": {
     "@types/react": "^19.3.0",
-    "@vinorcola/dynamic-table": "^1.4.1",
+    "@types/react-dom": "^19.3.0",
+    "@vinorcola/dynamic-table": "^1.4.2",
     "eslint-plugin-perfectionist": "^5.14.0",
     "i18next": "^27.1.5",
     "react": "^19.3.1",

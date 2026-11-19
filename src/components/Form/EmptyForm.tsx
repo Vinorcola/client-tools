@@ -1,4 +1,4 @@
-import FormButtons, { type ButtonsProps } from "./FormButtons"
+import FormButtons, { type ButtonsProps } from "./FormButtons.js"
 
 interface Props {
     onSubmit: () => void

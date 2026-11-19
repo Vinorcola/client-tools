@@ -1,11 +1,11 @@
 import cx from "@vinorcola/utils/classNames"
 import { useEffect, type ReactNode } from "react"
 
-import ActionContainer, { type Action } from "../ActionContainer"
-import { Timing, Title } from "./DefaultTheme"
-import { useMenu } from "./MenuProvider"
+import ActionContainer, { type Action } from "../ActionContainer.js"
+import { Timing, Title } from "./DefaultTheme.js"
+import { useMenu } from "./MenuProvider.js"
 
-export { default as MenuProvider } from "./MenuProvider"
+export { default as MenuProvider } from "./MenuProvider.js"
 
 export interface TimedSubject {
     createdAt: Date

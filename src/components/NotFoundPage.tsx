@@ -2,9 +2,9 @@ import { t } from "i18next"
 import { FaAnglesLeft, FaTriangleExclamation } from "react-icons/fa6"
 import { useNavigate } from "react-router"
 
-import { ActionButton, ButtonContainer } from "./Button"
-import Notification from "./Notification"
-import Page from "./Page"
+import { ActionButton, ButtonContainer } from "./Button/index.js"
+import Notification from "./Notification.js"
+import Page from "./Page/index.js"
 
 export default function PageNotFound() {
     const navigate = useNavigate()

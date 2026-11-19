@@ -1,11 +1,12 @@
 import cx from "@vinorcola/utils/classNames"
 
-export { default as ButtonContainer } from "./Container"
+export { default as ButtonContainer } from "./Container.js"
 
-export { default as ActionButton } from "./ActionButton"
-export { default as BackButton } from "./BackButton"
-export { default as LinkButton } from "./LinkButton"
-export { default as SubmitButton } from "./SubmitButton"
+export { default as ActionButton } from "./ActionButton.js"
+export { default as BackButton } from "./BackButton.js"
+export { default as LinkButton } from "./LinkButton.js"
+export { default as SelectableButton } from "./SelectableButton.js"
+export { default as SubmitButton } from "./SubmitButton.js"
 
 export type ButtonType =
     | "base"

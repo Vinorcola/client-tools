@@ -2,7 +2,7 @@ import cx from "@vinorcola/utils/classNames"
 import { t } from "i18next"
 import type { ReactNode } from "react"
 
-import IconLabel from "../IconLabel"
+import IconLabel from "../IconLabel.js"
 
 interface Props {
     children?: ReactNode

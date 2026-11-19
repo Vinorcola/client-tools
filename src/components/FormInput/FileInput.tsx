@@ -2,10 +2,10 @@ import cx from "@vinorcola/utils/classNames"
 import { useRef } from "react"
 import { FaX } from "react-icons/fa6"
 
-import FileIcon from "../FileIcon"
-import IconLabel from "../IconLabel"
+import FileIcon from "../FileIcon.js"
+import IconLabel from "../IconLabel.js"
 
-import type { InputProps } from "."
+import type { InputProps } from "./index.js"
 
 export type FileValue = {
     id: string

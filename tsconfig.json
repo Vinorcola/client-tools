@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
-        "rootDir": ".",
+        "rootDir": "./src",
         "outDir": "./lib",
         "target": "ESNext",
-        "module": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "declaration": true,
         "strict": true,
         "noImplicitAny": true,

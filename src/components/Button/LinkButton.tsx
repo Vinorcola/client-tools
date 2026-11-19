@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import { Link } from "react-router"
 
-import { resolveButtonClassName, type ButtonType } from "."
+import { resolveButtonClassName, type ButtonType } from "./index.js"
 
 interface Props {
     type?: ButtonType

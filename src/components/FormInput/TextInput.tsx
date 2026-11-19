@@ -1,4 +1,4 @@
-import type { InputValueFormater, InputProps } from "."
+import type { InputValueFormater, InputProps } from "./index.js"
 
 interface Props extends InputProps {
     formater?: InputValueFormater

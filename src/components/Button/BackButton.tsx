@@ -1,9 +1,9 @@
 import type { ReactNode } from "react"
 import { FaAnglesLeft } from "react-icons/fa6"
 
-import LinkButton from "./LinkButton"
+import LinkButton from "./LinkButton.js"
 
-import type { ButtonType } from "."
+import type { ButtonType } from "./index.js"
 
 interface Props {
     type?: ButtonType

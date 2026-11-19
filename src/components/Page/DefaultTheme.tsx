@@ -2,9 +2,9 @@ import { t } from "i18next"
 import type { ReactNode } from "react"
 import { FaAnglesLeft } from "react-icons/fa6"
 
-import type { Action } from "../ActionContainer"
+import type { Action } from "../ActionContainer.js"
 
-import Page, { TimedSubject } from "."
+import Page, { TimedSubject } from "./index.js"
 
 interface TitleProps {
     icon?: ReactNode

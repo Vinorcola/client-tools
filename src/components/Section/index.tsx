@@ -1,8 +1,8 @@
 import { Children, type ReactNode } from "react"
 
-import ActionContainer, { type Action } from "../ActionContainer"
-import { SectionLoader } from "../Loader"
-import { Container, Content, ContentSpacing, EmptyContent, Header, Title } from "./DefaultTheme"
+import ActionContainer, { type Action } from "../ActionContainer.js"
+import { SectionLoader } from "../Loader.js"
+import { Container, Content, ContentSpacing, EmptyContent, Header, Title } from "./DefaultTheme.js"
 
 export interface SectionProps {
     id?: string

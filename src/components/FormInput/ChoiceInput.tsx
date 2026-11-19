@@ -1,9 +1,9 @@
 import { t } from "i18next"
 import { ReactNode } from "react"
 
-import SelectableButton from "../Button/SelectableButton"
+import { SelectableButton } from "../Button/index.js"
 
-import type { InputProps } from "."
+import type { InputProps } from "./index.js"
 
 export interface Option {
     readonly id: string

@@ -1,7 +1,7 @@
 import cx from "@vinorcola/utils/classNames"
 import type { ReactNode } from "react"
 
-import { resolveButtonClassName, type ButtonType } from "."
+import { resolveButtonClassName, type ButtonType } from "./index.js"
 
 interface Props {
     type?: ButtonType

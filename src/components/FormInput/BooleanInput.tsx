@@ -1,8 +1,8 @@
 import { FaCheck, FaX } from "react-icons/fa6"
 
-import ChoiceInput, { Option } from "./ChoiceInput"
+import ChoiceInput, { Option } from "./ChoiceInput.js"
 
-import type { InputProps } from "."
+import type { InputProps } from "./index.js"
 
 const YES_NO_OPTIONS: Option[] = [
     { id: "true", translationKey: "global.yes", icon: <FaCheck className="text-green-600" /> },

@@ -8,7 +8,7 @@ import type {
 import type { JSX } from "react"
 import { Link } from "react-router"
 
-import { InlineLoader } from "../Loader"
+import { InlineLoader } from "../Loader.js"
 
 DynamicTable.ControllerContainer = function ControllerContainer(props: ControllerButtonsGroupProps) {
     return (
