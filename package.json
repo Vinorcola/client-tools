@@ -22,6 +22,9 @@
     },
     "./http": {
       "default": "./lib/http.js"
+    },
+    "./identity": {
+      "default": "./lib/identity.js"
     }
   },
   "scripts": {
