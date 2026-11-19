@@ -34,6 +34,7 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vinorcola/dynamic-table": "^1.4.2",

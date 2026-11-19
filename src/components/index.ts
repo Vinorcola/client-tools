@@ -1,4 +1,7 @@
 export { default as ActionController } from "./ActionContainer.js"
+export { default as AttributesSection } from "./AttributesSection.js"
+export { default as DebugContent } from "./DebugContent.js"
+export { default as DescriptionSection } from "./DescriptionSection.js"
 export {
     ActionButton,
     BackButton,
