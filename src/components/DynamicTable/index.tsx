@@ -10,6 +10,8 @@ import { Link } from "react-router"
 
 import { InlineLoader } from "../Loader.js"
 
+export { default as ValueWrapper } from "./ValueWrapper.js"
+
 DynamicTable.ControllerContainer = function ControllerContainer(props: ControllerButtonsGroupProps) {
     return (
         <div className="absolute top-0 -right-6">

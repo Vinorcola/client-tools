@@ -12,7 +12,7 @@ export {
     SelectableButton,
     SubmitButton,
 } from "./Button/index.js"
-export { default as DynamicTable } from "./DynamicTable/index.js"
+export { default as DynamicTable, ValueWrapper } from "./DynamicTable/index.js"
 export { default as EmptyList } from "./EmptyList.js"
 export { EmptyForm, FormButtons, FormLine } from "./Form/index.js"
 export {
