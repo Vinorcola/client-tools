@@ -35,9 +35,11 @@ export {
     type InputProps,
 } from "./FormInput/index.js"
 export { default as FileIcon } from "./FileIcon.js"
+export { default as HomeEntry } from "./HomeEntry.js"
 export { default as IconLabel } from "./IconLabel.js"
 export { default as InlineList } from "./InlineList.js"
 export { default as Loader } from "./Loader.js"
+export { default as MenuEntry } from "./MenuEntry.js"
 export { default as MultiLineText } from "./MultiLineText.js"
 export { default as NotFoundPage } from "./NotFoundPage.js"
 export { default as Notification } from "./Notification.js"
