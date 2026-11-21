@@ -1,3 +1,10 @@
+import type { Ulid } from "@vinorcola/utils/types"
+
+export interface IdentifiedResponse {
+    readonly id: string
+    readonly version: Ulid
+}
+
 export function getHttp<T = any>(uri: string): Promise<T> {
     return request<T>("GET", uri, undefined)
 }
