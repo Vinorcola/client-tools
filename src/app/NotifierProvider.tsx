@@ -9,6 +9,11 @@ export function triggerError(error: Error): void {
 }
 
 // oxlint-disable-next-line react-refresh/only-export-components
+export function triggerSuccess(message: string): void {
+    toast.success(message)
+}
+
+// oxlint-disable-next-line react-refresh/only-export-components
 export function triggerWarning(message: string): void {
     const error = new Error(message)
     console.warn(error)
@@ -17,11 +22,13 @@ export function triggerWarning(message: string): void {
 
 interface Notifier {
     error: (error: Error) => void
+    success: (message: string) => void
     warn: (message: string) => void
 }
 
 const defaultContextValue: Notifier = {
     error: triggerError,
+    success: triggerSuccess,
     warn: triggerWarning,
 }
 
