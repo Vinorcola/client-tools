@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap");
+@import "tailwindcss";
+@source "../node_modules/@vinorcola/dynamic-table";
+
+@theme {
+    /* * * * * * * * *
+     * Custom colors *
+     * * * * * * * * */
+
+    /* Malachite: Between green and lime */
+    --color-malachite-50: oklch(0.983 0.02 138.44);
+    --color-malachite-100: oklch(0.961 0.047 140.46);
+    --color-malachite-200: oklch(0.924 0.092 140.71);
+    --color-malachite-300: oklch(0.867 0.158 141);
+    --color-malachite-400: oklch(0.79 0.209 141.07);
+    --color-malachite-500: oklch(0.741 0.228 141.35);
+    --color-malachite-600: oklch(0.617 0.194 141.42);
+    --color-malachite-700: oklch(0.518 0.157 141.36);
+    --color-malachite-800: oklch(0.441 0.125 141.18);
+    --color-malachite-900: oklch(0.388 0.107 141.45);
+    --color-malachite-950: oklch(0.262 0.075 141.45);
+
+    /* Clown fish: Between red and orange */
+    --color-clown-fish-50: oklch(0.975 0.015 61.349);
+    --color-clown-fish-100: oklch(0.946 0.036 66.046);
+    --color-clown-fish-200: oklch(0.886 0.074 60.715);
+    --color-clown-fish-300: oklch(0.814 0.122 56.209);
+    --color-clown-fish-400: oklch(0.732 0.175 46.442);
+    --color-clown-fish-500: oklch(0.68 0.211 39.391);
+    --color-clown-fish-600: oklch(0.628 0.218 34.951);
+    --color-clown-fish-700: oklch(0.54 0.193 33.247);
+    --color-clown-fish-800: oklch(0.458 0.159 32.42);
+    --color-clown-fish-900: oklch(0.397 0.129 32.984);
+    --color-clown-fish-950: oklch(0.258 0.085 31.116);
+
+    /* Mandalay: Cream */
+    --color-mandalay-50: oklch(0.975 0.015 94.2);
+    --color-mandalay-100: oklch(0.937 0.038 92.2);
+    --color-mandalay-200: oklch(0.874 0.071 89.5);
+    --color-mandalay-300: oklch(0.794 0.104 85.6);
+    --color-mandalay-400: oklch(0.721 0.122 78.7);
+    --color-mandalay-500: oklch(0.638 0.113 74.1);
+    --color-mandalay-600: oklch(0.573 0.108 64);
+    --color-mandalay-700: oklch(0.479 0.09 57.1);
+    --color-mandalay-800: oklch(0.423 0.075 51.4);
+    --color-mandalay-900: oklch(0.381 0.065 45.7);
+    --color-mandalay-950: oklch(0.259 0.045 41.6);
+
+    /* * * * * *
+    /* Theming *
+     * * * * * */
+
+    --color-page-background: var(--color-base-100);
+    --color-menu: var(--color-mandalay-400);
+    --color-muted: var(--color-mandalay-500);
+    --color-section-content: var(--color-mandalay-50);
+    --color-section-header: var(--color-mandalay-500);
+    --color-section-muted: var(--color-mandalay-800);
+    --color-title: var(--color-mandalay-950);
+    --color-table-header: var(--color-mandalay-300);
+    --color-table-line-even: color-mix(in oklab, var(--color-mandalay-300), transparent 70%);
+    --color-table-line-odd: color-mix(in oklab, var(--color-mandalay-200), transparent 70%);
+    --color-table-line-title-even: color-mix(in oklab, var(--color-mandalay-400), transparent 70%);
+    --color-table-line-title-odd: color-mix(in oklab, var(--color-mandalay-200), transparent 50%);
+    --color-table-line-hover: color-mix(in oklab, var(--color-mandalay-200), transparent 10%);
+    --color-light-info: var(--color-blue-200);
+    --color-light-success: var(--color-malachite-200);
+    --color-light-warning: var(--color-clown-fish-200);
+    --color-light-error: var(--color-red-200);
+    --color-select-draw: var(--color-mandalay-700);
+    --color-select-draw-hover: var(--color-mandalay-900);
+    --color-select-text: var(--color-base-content);
+    --color-select-draw-disabled: var(--color-mandalay-300);
+    --color-select-text-disabled: var(--color-mandalay-500);
+    --color-form-embeded-section-border: var(--color-mandalay-300);
+}
+
+@plugin "daisyui" {
+    themes: retro --default;
+    logs: false;
+}
+
+@plugin "daisyui/theme" {
+    name: "retro";
+    default: true;
+    --border: 0;
+    --radius-selector: 0;
+    --radius-field: 0;
+    --radius-box: 0;
+
+    --color-base-100: var(--color-mandalay-100);
+    --color-base-200: var(--color-mandalay-200);
+    --color-base-300: var(--color-mandalay-300);
+    --color-base-content: var(--color-mandalay-900);
+    --color-primary: var(--color-yellow-800);
+    --color-primary-content: var(--color-base-100);
+    --color-secondary: var(--color-mandalay-300);
+    --color-secondary-content: var(--color-mandalay-900);
+    --color-accent: var(--color-amber-400);
+    --color-accent-content: var(--color-stone-950);
+    --color-neutral: var(--color-stone-700);
+    --color-neutral-content: var(--color-base-100);
+    --color-info: var(--color-blue-400);
+    --color-info-content: var(--color-base-100);
+    --color-success: var(--color-malachite-600);
+    --color-success-content: var(--color-base-100);
+    --color-warning: var(--color-clown-fish-500);
+    --color-warning-content: var(--color-clown-fish-950);
+    --color-error: var(--color-red-600);
+    --color-error-content: var(--color-base-100);
+}
+
+@utility small-caps {
+    font-variant: small-caps;
+}
+
+/* * * * * * * *
+ * App design  *
+ * * * * * * * */
+
+html {
+    font-family: "Alan Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html,
+body,
+#root {
+    @apply h-full;
+}
+
+/* Override Daisyui table spacing */
+@layer utilities {
+    .table :where(th, td) {
+        @apply py-2;
+    }
+}
