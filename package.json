@@ -20,6 +20,9 @@
     "./components": {
       "default": "./lib/components/index.js"
     },
+    "./display": {
+      "default": "./lib/display.js"
+    },
     "./http": {
       "default": "./lib/http.js"
     },
