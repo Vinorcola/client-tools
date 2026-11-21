@@ -25,6 +25,8 @@ export {
     type FileValue,
     type LocalFileValue,
     IntegerInput,
+    LazyMultiSelectInput,
+    LazySelectInput,
     LoadingSelectInput,
     MultiSelectInput,
     PriceInput,
