@@ -34,7 +34,8 @@
     },
     "./identity": {
       "default": "./lib/identity.js"
-    }
+    },
+    "./styles.css": "./lib/styles.css"
   },
   "scripts": {
     "build": "tsc && cp src/styles.css lib/styles.css",
