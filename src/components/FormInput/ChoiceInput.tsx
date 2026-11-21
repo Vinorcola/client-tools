@@ -12,7 +12,6 @@ export interface Option {
 }
 
 interface Props extends InputProps {
-    readonly unknownTranslationKey: string
     readonly options: Option[]
 }
 

@@ -10,5 +10,5 @@ const YES_NO_OPTIONS: Option[] = [
 ]
 
 export default function BooleanInput(props: InputProps) {
-    return <ChoiceInput {...props} unknownTranslationKey="global.unknown" options={YES_NO_OPTIONS} />
+    return <ChoiceInput {...props} options={YES_NO_OPTIONS} />
 }
