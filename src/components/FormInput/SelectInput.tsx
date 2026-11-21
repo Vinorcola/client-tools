@@ -3,6 +3,7 @@ import { t } from "i18next"
 import { useMemo } from "react"
 import Select, { type ClassNamesConfig, type StylesConfig } from "react-select"
 
+import { useInputState } from "../Form/index.js"
 import Loader from "../Loader.js"
 
 import { InputProps } from "./index.js"
@@ -107,6 +108,7 @@ export function LoadingSelectInput() {
 }
 
 export default function SelectInput(props: Props) {
+    const { value, onChange } = useInputState(props.id)
     const options = useMemo(
         () =>
             props.options.map((option) => ({
@@ -115,7 +117,7 @@ export default function SelectInput(props: Props) {
             })),
         [props.options],
     )
-    const selectedOption = useMemo(() => options.find((option) => option.value === props.value), [options, props.value])
+    const selectedOption = useMemo(() => options.find((option) => option.value === value), [options, value])
 
     return (
         <Select<SelectOption, false>
@@ -128,7 +130,7 @@ export default function SelectInput(props: Props) {
             autoFocus={props.autofocus}
             value={selectedOption}
             onChange={(option) => {
-                props.onChange(option === null ? "" : option.value)
+                onChange(option === null ? "" : option.value)
             }}
         />
     )

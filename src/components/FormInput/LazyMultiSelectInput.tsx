@@ -4,7 +4,7 @@ import { LoadingSelectInput, type Option } from "./SelectInput.js"
 
 import { InputProps, MultiSelectInput } from "./index.js"
 
-interface Props extends InputProps<string[]> {
+interface Props extends InputProps {
     readonly options: Promise<Option[]>
 }
 

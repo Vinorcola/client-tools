@@ -13,10 +13,8 @@ export { default as TextInput } from "./TextInput.js"
 
 export type InputValueFormater = (value: string) => string
 
-export interface InputProps<Value = string> {
+export interface InputProps {
     id: string
     optional: boolean
     autofocus?: boolean
-    value: Value
-    onChange: (value: Value) => void
 }

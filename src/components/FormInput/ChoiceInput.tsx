@@ -2,6 +2,7 @@ import { t } from "i18next"
 import { ReactNode } from "react"
 
 import { SelectableButton } from "../Button/index.js"
+import { useInputState } from "../Form/index.js"
 
 import type { InputProps } from "./index.js"
 
@@ -16,6 +17,8 @@ interface Props extends InputProps {
 }
 
 export default function ChoiceInput(props: Props) {
+    const { value, onChange } = useInputState(props.id)
+
     return (
         <>
             <div className="flex flex-wrap gap-2 px-2 py-1 items-center justify-center">
@@ -24,16 +27,16 @@ export default function ChoiceInput(props: Props) {
                         key={option.id}
                         className="grow"
                         icon={option.icon}
-                        selected={props.value === option.id}
+                        selected={value === option.id}
                         onClick={() => {
-                            props.onChange(props.value === option.id ? "" : option.id)
+                            onChange(value === option.id ? "" : option.id)
                         }}
                     >
                         {t(option.translationKey)}
                     </SelectableButton>
                 ))}
             </div>
-            <input name={props.id} type="hidden" required={!props.optional} value={props.value ?? ""} />
+            <input name={props.id} type="hidden" required={!props.optional} value={value} />
         </>
     )
 }

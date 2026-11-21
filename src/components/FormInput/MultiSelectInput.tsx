@@ -2,15 +2,17 @@ import { t } from "i18next"
 import { useMemo } from "react"
 import Select from "react-select"
 
+import { useInputState } from "../Form/index.js"
 import { CLASSNAMES, Option, SelectOption, STYLES } from "./SelectInput.js"
 
 import { InputProps } from "./index.js"
 
-interface Props extends InputProps<string[]> {
+interface Props extends InputProps {
     readonly options: Option[]
 }
 
 export default function MultiSelectInput(props: Props) {
+    const { value, onChange } = useInputState<string[]>(props.id)
     const options = useMemo(
         () =>
             props.options.map((option) => ({
@@ -20,10 +22,10 @@ export default function MultiSelectInput(props: Props) {
         [props.options],
     )
     const selectedOptions = useMemo(() => {
-        const selection = new Set(props.value)
+        const selection = new Set(value)
 
         return options.filter((option) => selection.has(option.value))
-    }, [options, props.value])
+    }, [options, value])
 
     return (
         <Select<SelectOption, true>
@@ -36,7 +38,7 @@ export default function MultiSelectInput(props: Props) {
             autoFocus={props.autofocus}
             value={selectedOptions}
             onChange={(options) => {
-                props.onChange(options.map((option) => option.value))
+                onChange(options.map((option) => option.value))
             }}
         />
     )

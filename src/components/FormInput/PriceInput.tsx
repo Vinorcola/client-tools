@@ -1,6 +1,10 @@
+import { useInputState } from "../Form/index.js"
+
 import type { InputProps } from "./index.js"
 
 export default function PriceInput(props: InputProps) {
+    const { value, onChange } = useInputState(props.id)
+
     return (
         <input
             name={props.id}
@@ -9,9 +13,9 @@ export default function PriceInput(props: InputProps) {
             step={0.01}
             required={!props.optional}
             autoFocus={props.autofocus}
-            value={props.value}
+            value={value}
             onChange={(event) => {
-                props.onChange(event.currentTarget.value)
+                onChange(event.currentTarget.value)
             }}
         />
     )

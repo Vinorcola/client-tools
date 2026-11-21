@@ -3,6 +3,7 @@ import { useRef } from "react"
 import { FaX } from "react-icons/fa6"
 
 import FileIcon from "../FileIcon.js"
+import { useInputState } from "../Form/index.js"
 import IconLabel from "../IconLabel.js"
 
 import type { InputProps } from "./index.js"
@@ -16,17 +17,18 @@ export type FileValue = {
 export type LocalFileValue = Omit<FileValue, "id">
 export type FileInputValue = FileValue | LocalFileValue | null
 
-export default function FileInput(props: InputProps<FileInputValue>) {
+export default function FileInput(props: InputProps) {
     const ref = useRef<HTMLInputElement>(null)
+    const { value, onChange } = useInputState<FileInputValue>(props.id)
 
     return (
         <>
-            {props.value !== null && (
+            {value !== null && (
                 <div className="flex flex-wrap min-h-9 p-2 gap-2 bg-yellow-200/50 items-center">
                     <FileCard
-                        {...props.value}
+                        {...value}
                         onDrop={() => {
-                            props.onChange(null)
+                            onChange(null)
                             ref.current!.value = ""
                         }}
                     />
@@ -36,7 +38,7 @@ export default function FileInput(props: InputProps<FileInputValue>) {
                 ref={ref}
                 name={props.id}
                 className={cx(
-                    props.value === null
+                    value === null
                         ? "file-input h-9 w-full px-2 py-1 border-0 outline-0 shadow-none bg-yellow-200/50"
                         : "hidden",
                 )}
@@ -45,7 +47,7 @@ export default function FileInput(props: InputProps<FileInputValue>) {
                 autoFocus={props.autofocus}
                 onChange={(event) => {
                     const file = event.target.files![0] as File | undefined
-                    props.onChange(
+                    onChange(
                         file === undefined
                             ? null
                             : {
