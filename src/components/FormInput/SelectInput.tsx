@@ -3,10 +3,10 @@ import { t } from "i18next"
 import { useMemo } from "react"
 import Select, { type ClassNamesConfig, type StylesConfig } from "react-select"
 
-import { useInputState } from "../Form/index.js"
+import { FormLine, useInputState } from "../Form/index.js"
 import Loader from "../Loader.js"
 
-import { InputProps } from "./index.js"
+import { InputLineProps, InputProps } from "./index.js"
 
 export interface Option {
     readonly id: string
@@ -104,6 +104,14 @@ export function LoadingSelectInput() {
             classNames={CLASSNAMES}
             styles={STYLES}
         />
+    )
+}
+
+export function SelectInputLine({ title, ...props }: Props & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <SelectInput {...props} />
+        </FormLine>
     )
 }
 

@@ -1,9 +1,17 @@
-import { useInputState } from "../Form/index.js"
+import { FormLine, useInputState } from "../Form/index.js"
 
-import type { InputValueFormater, InputProps } from "./index.js"
+import type { InputValueFormater, InputProps, InputLineProps } from "./index.js"
 
 interface Props extends InputProps {
     formater?: InputValueFormater
+}
+
+export function TextInputLine({ title, ...props }: InputProps & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <TextInput {...props} />
+        </FormLine>
+    )
 }
 
 export default function TextInput(props: Props) {

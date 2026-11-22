@@ -1,6 +1,14 @@
-import { useInputState } from "../Form/index.js"
+import { FormLine, useInputState } from "../Form/index.js"
 
-import type { InputProps } from "./index.js"
+import type { InputLineProps, InputProps } from "./index.js"
+
+export function PriceInputLine({ title, ...props }: InputProps & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <PriceInput {...props} />
+        </FormLine>
+    )
+}
 
 export default function PriceInput(props: InputProps) {
     const { value, onChange } = useInputState(props.id)

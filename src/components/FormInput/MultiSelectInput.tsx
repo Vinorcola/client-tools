@@ -2,13 +2,21 @@ import { t } from "i18next"
 import { useMemo } from "react"
 import Select from "react-select"
 
-import { useInputState } from "../Form/index.js"
+import { FormLine, useInputState } from "../Form/index.js"
 import { CLASSNAMES, Option, SelectOption, STYLES } from "./SelectInput.js"
 
-import { InputProps } from "./index.js"
+import { InputLineProps, InputProps } from "./index.js"
 
 interface Props extends InputProps {
     readonly options: Option[]
+}
+
+export function MultiSelectInputLine({ title, ...props }: Props & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <MultiSelectInput {...props} />
+        </FormLine>
+    )
 }
 
 export default function MultiSelectInput(props: Props) {

@@ -2,9 +2,9 @@ import { t } from "i18next"
 import { ReactNode } from "react"
 
 import { SelectableButton } from "../Button/index.js"
-import { useInputState } from "../Form/index.js"
+import { FormLine, useInputState } from "../Form/index.js"
 
-import type { InputProps } from "./index.js"
+import type { InputLineProps, InputProps } from "./index.js"
 
 export interface Option {
     readonly id: string
@@ -14,6 +14,14 @@ export interface Option {
 
 interface Props extends InputProps {
     readonly options: Option[]
+}
+
+export function ChoiceInputLine({ title, ...props }: Props & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <ChoiceInput {...props} />
+        </FormLine>
+    )
 }
 
 export default function ChoiceInput(props: Props) {

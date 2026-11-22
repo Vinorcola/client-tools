@@ -1,11 +1,20 @@
 import { Suspense, use } from "react"
 
+import FormLine from "../Form/FormLine.js"
 import SelectInput, { LoadingSelectInput, type Option } from "./SelectInput.js"
 
-import { InputProps } from "./index.js"
+import { InputLineProps, InputProps } from "./index.js"
 
 interface Props extends InputProps {
     readonly options: Promise<Option[]>
+}
+
+export function LazySelectInputLine({ title, ...props }: Props & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <LazySelectInput {...props} />
+        </FormLine>
+    )
 }
 
 export default function LazySelectInput(props: Props) {

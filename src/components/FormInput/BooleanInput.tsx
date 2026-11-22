@@ -1,13 +1,22 @@
 import { FaCheck, FaX } from "react-icons/fa6"
 
-import ChoiceInput, { Option } from "./ChoiceInput.js"
+import FormLine from "../Form/FormLine.js"
+import ChoiceInput, { type Option } from "./ChoiceInput.js"
 
-import type { InputProps } from "./index.js"
+import type { InputLineProps, InputProps } from "./index.js"
 
 const YES_NO_OPTIONS: Option[] = [
     { id: "true", translationKey: "global.yes", icon: <FaCheck className="text-green-600" /> },
     { id: "false", translationKey: "global.no", icon: <FaX className="text-red-500" /> },
 ]
+
+export function BooleanInputLine({ title, ...props }: InputProps & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <BooleanInput {...props} />
+        </FormLine>
+    )
+}
 
 export default function BooleanInput(props: InputProps) {
     return <ChoiceInput {...props} options={YES_NO_OPTIONS} />

@@ -3,10 +3,10 @@ import { useRef } from "react"
 import { FaX } from "react-icons/fa6"
 
 import FileIcon from "../FileIcon.js"
-import { useInputState } from "../Form/index.js"
+import { FormLine, useInputState } from "../Form/index.js"
 import IconLabel from "../IconLabel.js"
 
-import type { InputProps } from "./index.js"
+import type { InputLineProps, InputProps } from "./index.js"
 
 export type FileValue = {
     id: string
@@ -16,6 +16,14 @@ export type FileValue = {
 }
 export type LocalFileValue = Omit<FileValue, "id">
 export type FileInputValue = FileValue | LocalFileValue | null
+
+export function FileInputLine({ title, ...props }: InputProps & InputLineProps) {
+    return (
+        <FormLine id={props.id} title={title} optional={props.optional}>
+            <FileInput {...props} />
+        </FormLine>
+    )
+}
 
 export default function FileInput(props: InputProps) {
     const ref = useRef<HTMLInputElement>(null)
