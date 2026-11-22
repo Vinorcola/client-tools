@@ -1,5 +1,4 @@
 import cx from "@vinorcola/utils/classNames"
-import { t } from "i18next"
 import { useMemo } from "react"
 import Select, { type ClassNamesConfig, type StylesConfig } from "react-select"
 
@@ -10,7 +9,7 @@ import { InputLineProps, InputProps } from "./index.js"
 
 export interface Option {
     readonly id: string
-    readonly translationKey: string
+    readonly title: string
 }
 
 export interface SelectOption {
@@ -121,7 +120,7 @@ export default function SelectInput(props: Props) {
         () =>
             props.options.map((option) => ({
                 value: option.id,
-                label: t(option.translationKey),
+                label: option.title,
             })),
         [props.options],
     )

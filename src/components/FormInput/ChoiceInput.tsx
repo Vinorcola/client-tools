@@ -1,4 +1,3 @@
-import { t } from "i18next"
 import { ReactNode } from "react"
 
 import { SelectableButton } from "../Button/index.js"
@@ -8,7 +7,7 @@ import type { InputLineProps, InputProps } from "./index.js"
 
 export interface Option {
     readonly id: string
-    readonly translationKey: string
+    readonly title: string
     readonly icon: ReactNode
 }
 
@@ -40,7 +39,7 @@ export default function ChoiceInput(props: Props) {
                             onChange(value === option.id ? "" : option.id)
                         }}
                     >
-                        {t(option.translationKey)}
+                        {option.title}
                     </SelectableButton>
                 ))}
             </div>

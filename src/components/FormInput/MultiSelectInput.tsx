@@ -1,4 +1,3 @@
-import { t } from "i18next"
 import { useMemo } from "react"
 import Select from "react-select"
 
@@ -25,7 +24,7 @@ export default function MultiSelectInput(props: Props) {
         () =>
             props.options.map((option) => ({
                 value: option.id,
-                label: t(option.translationKey),
+                label: option.title,
             })),
         [props.options],
     )
