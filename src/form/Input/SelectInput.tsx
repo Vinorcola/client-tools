@@ -2,8 +2,9 @@ import cx from "@vinorcola/utils/classNames"
 import { useMemo } from "react"
 import Select, { type ClassNamesConfig, type StylesConfig } from "react-select"
 
-import { FormLine, useInputState } from "../Form/index.js"
-import Loader from "../Loader.js"
+import { Loader } from "../../components/index.js"
+import FormLine from "../FormLine.js"
+import { useInputState } from "../index.js"
 
 import { InputLineProps, InputProps } from "./index.js"
 

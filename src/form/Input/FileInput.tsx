@@ -2,9 +2,9 @@ import cx from "@vinorcola/utils/classNames"
 import { useRef } from "react"
 import { FaX } from "react-icons/fa6"
 
-import FileIcon from "../FileIcon.js"
-import { FormLine, useInputState } from "../Form/index.js"
-import IconLabel from "../IconLabel.js"
+import { FileIcon, IconLabel } from "../../components/index.js"
+import FormLine from "../FormLine.js"
+import { useInputState } from "../index.js"
 
 import type { InputLineProps, InputProps } from "./index.js"
 

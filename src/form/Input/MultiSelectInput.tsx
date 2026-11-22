@@ -1,7 +1,8 @@
 import { useMemo } from "react"
 import Select from "react-select"
 
-import { FormLine, useInputState } from "../Form/index.js"
+import FormLine from "../FormLine.js"
+import { useInputState } from "../index.js"
 import { CLASSNAMES, Option, SelectOption, STYLES } from "./SelectInput.js"
 
 import { InputLineProps, InputProps } from "./index.js"

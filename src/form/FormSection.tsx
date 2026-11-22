@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import Section, { SectionProps } from "../Section/index.js"
+import { Section, type SectionProps } from "../components/index.js"
 
 interface Props extends SectionProps {
     children: ReactNode

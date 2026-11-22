@@ -1,9 +1,9 @@
 import { Suspense, use } from "react"
 
-import FormLine from "../Form/FormLine.js"
+import FormLine from "../FormLine.js"
 import SelectInput, { LoadingSelectInput, type Option } from "./SelectInput.js"
 
-import { InputLineProps, InputProps } from "./index.js"
+import type { InputLineProps, InputProps } from "./index.js"
 
 interface Props extends InputProps {
     readonly options: Promise<Option[]>

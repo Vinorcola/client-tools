@@ -2,7 +2,7 @@ import { t } from "i18next"
 import type { ReactNode } from "react"
 import { FaAnglesLeft, FaFloppyDisk } from "react-icons/fa6"
 
-import { ActionButton, BackButton, ButtonContainer, SubmitButton, type ButtonType } from "../Button/index.js"
+import { ActionButton, BackButton, ButtonContainer, SubmitButton, type ButtonType } from "../components/index.js"
 
 interface Props {
     submitting: boolean

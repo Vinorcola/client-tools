@@ -26,6 +26,9 @@
     "./display": {
       "default": "./lib/display.js"
     },
+    "./form": {
+      "default": "./lib/form/index.js"
+    },
     "./http": {
       "default": "./lib/http.js"
     },

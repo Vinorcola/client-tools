@@ -1,4 +1,5 @@
-import { FormLine, useInputState } from "../Form/index.js"
+import FormLine from "../FormLine.js"
+import { useInputState } from "../index.js"
 
 import type { InputLineProps, InputProps } from "./index.js"
 

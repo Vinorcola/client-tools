@@ -1,7 +1,7 @@
 import { t } from "i18next"
 import { FaCheck, FaX } from "react-icons/fa6"
 
-import FormLine from "../Form/FormLine.js"
+import FormLine from "../FormLine.js"
 import ChoiceInput, { type Option } from "./ChoiceInput.js"
 
 import type { InputLineProps, InputProps } from "./index.js"

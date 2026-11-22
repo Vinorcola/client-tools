@@ -1,7 +1,8 @@
 import { ReactNode } from "react"
 
-import { SelectableButton } from "../Button/index.js"
-import { FormLine, useInputState } from "../Form/index.js"
+import { SelectableButton } from "../../components/index.js"
+import FormLine from "../FormLine.js"
+import { useInputState } from "../index.js"
 
 import type { InputLineProps, InputProps } from "./index.js"
 
