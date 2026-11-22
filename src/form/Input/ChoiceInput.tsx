@@ -9,7 +9,7 @@ import type { InputLineProps, InputProps } from "./index.js"
 export interface Option {
     readonly id: string
     readonly title: string
-    readonly icon: ReactNode
+    readonly icon?: ReactNode
 }
 
 interface Props extends InputProps {
