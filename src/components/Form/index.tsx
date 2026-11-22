@@ -1,11 +1,12 @@
-import { createContext, ReactNode, useContext, useMemo } from "react"
+import { createContext, Dispatch, ReactNode, SetStateAction, useCallback, useContext, useMemo } from "react"
 
-import { FileInputValue } from "../FormInput/FileInput.js"
+import type { FileInputValue } from "../FormInput/FileInput.js"
 import FormButtons, { ButtonsProps } from "./FormButtons.js"
 
 export { default as EmptyForm } from "./EmptyForm.js"
 export { default as FormButtons } from "./FormButtons.js"
 export { default as FormLine } from "./FormLine.js"
+export { default as FormSection } from "./FormSection.js"
 
 export type InputValue = string | string[] | FileInputValue
 export type FormState = { [input: string]: InputValue }
@@ -17,7 +18,7 @@ interface Props<State extends FormState> extends FormControl<State> {
 
 interface FormControl<State extends FormState> {
     state: State
-    onChange: (input: keyof State, state: InputValue) => void
+    onChange: Dispatch<SetStateAction<State>>
 }
 
 const Context = createContext<FormControl<FormState>>({
@@ -27,12 +28,19 @@ const Context = createContext<FormControl<FormState>>({
 
 export function useInputState<Value extends InputValue = string>(id: string) {
     const formState = useContext(Context)
+    const onChange = useCallback(
+        (value: Value) => {
+            formState.onChange((formState) => ({
+                ...formState,
+                [id]: value,
+            }))
+        },
+        [id],
+    )
 
     return {
         value: formState.state[id] as Value,
-        onChange: (value: Value) => {
-            formState.onChange(id, value)
-        },
+        onChange,
     }
 }
 
@@ -51,7 +59,7 @@ export default function Form<State extends FormState>({
                 onSubmit(new FormData(event.target))
             }}
         >
-            <Context value={useMemo(() => ({ state, onChange }), [state, onChange])}>{children}</Context>
+            <Context value={useMemo(() => ({ state, onChange }), [state, onChange]) as any}>{children}</Context>
             <FormButtons {...buttonProps} />
         </form>
     )

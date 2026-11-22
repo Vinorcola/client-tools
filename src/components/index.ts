@@ -14,7 +14,16 @@ export {
 } from "./Button/index.js"
 export { default as DynamicTable, ValueWrapper } from "./DynamicTable/index.js"
 export { default as EmptyList } from "./EmptyList.js"
-export { EmptyForm, default as Form, FormButtons, FormLine, useInputState } from "./Form/index.js"
+export {
+    EmptyForm,
+    default as Form,
+    FormButtons,
+    FormLine,
+    FormSection,
+    type FormState,
+    type InputValue,
+    useInputState,
+} from "./Form/index.js"
 export {
     BooleanInput,
     ChoiceInput,

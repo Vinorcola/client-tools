@@ -15,6 +15,6 @@ export type InputValueFormater = (value: string) => string
 
 export interface InputProps {
     id: string
-    optional: boolean
+    optional?: boolean
     autofocus?: boolean
 }
