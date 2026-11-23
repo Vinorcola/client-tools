@@ -41,6 +41,7 @@ export {
     type InputValueFormater,
     type InputProps,
 } from "./Input/index.js"
+export { type FileUpload, type UploadedFiles, useFileUpload } from "./upload.js"
 
 export type InputValue = string | string[] | FileInputValue
 export type FormState = { [input: string]: InputValue }
