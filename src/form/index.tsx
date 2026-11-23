@@ -44,19 +44,19 @@ export {
 export { type FileUpload, type UploadedFiles, useFileUpload } from "./upload.js"
 
 export type InputValue = string | string[] | FileInputValue
-export type FormState = { [input: string]: InputValue }
+export type FormState<Keys extends string> = Record<Keys, InputValue>
 
-interface Props<State extends FormState> extends FormControl<State> {
+interface Props<Keys extends string> extends FormControl<Keys> {
     onSubmit: (formData: FormData) => void
     children?: ReactNode
 }
 
-interface FormControl<State extends FormState> {
-    state: State
-    onChange: Dispatch<SetStateAction<State>>
+interface FormControl<Keys extends string> {
+    state: FormState<Keys>
+    onChange: Dispatch<SetStateAction<FormState<Keys>>>
 }
 
-const Context = createContext<FormControl<FormState>>({
+const Context = createContext<FormControl<string>>({
     state: {},
     onChange: () => {},
 })
@@ -79,13 +79,13 @@ export function useInputState<Value extends InputValue = string>(id: string) {
     }
 }
 
-export default function Form<State extends FormState>({
+export default function Form<Keys extends string>({
     state,
     onChange,
     onSubmit,
     children,
     ...buttonProps
-}: Props<State> & ButtonsProps) {
+}: Props<Keys> & ButtonsProps) {
     return (
         <form
             className="flex flex-col gap-8"

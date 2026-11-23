@@ -70,6 +70,6 @@
     "vite-plus": "catalog:"
   },
   "dependencies": {
-    "@vinorcola/utils": "^1.0.4"
+    "@vinorcola/utils": "^1.0.5"
   }
 }

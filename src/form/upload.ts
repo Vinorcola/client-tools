@@ -6,14 +6,14 @@ import { FileInputValue, FileValue } from "./Input/index.js"
 
 import { FormState } from "./index.js"
 
-export type UploadedFiles = Record<string, string | null>
+export type UploadedFiles<Keys extends string> = Record<Keys, string | null>
 
-export interface FileUpload {
+export interface FileUpload<Keys extends string> {
     readonly isUploading: boolean
-    readonly uploadFiles: (formState: FormState, formData: FormData) => Promise<UploadedFiles>
+    readonly uploadFiles: (formState: FormState<Keys>, formData: FormData) => Promise<UploadedFiles<Keys>>
 }
 
-export function useFileUpload(attributes: string[]): FileUpload {
+export function useFileUpload<Keys extends string>(attributes: Keys[]): FileUpload<Keys> {
     const [isUploading, setUploading] = useState(false)
 
     return {
@@ -33,11 +33,15 @@ export function useFileUpload(attributes: string[]): FileUpload {
     }
 }
 
-function uploadFiles(attributes: string[], formState: FormState, formData: FormData): Promise<UploadedFiles> {
+function uploadFiles<Keys extends string>(
+    attributes: Keys[],
+    formState: FormState<Keys>,
+    formData: FormData,
+): Promise<UploadedFiles<Keys>> {
     return awaitAll(
         fromList(
             attributes,
-            (attribute) => attribute,
+            (attribute): Keys => attribute,
             (attribute) =>
                 handleFileUpload(formState[attribute] as FileInputValue, formData.get(attribute) as File | null),
         ),
