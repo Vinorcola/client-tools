@@ -132,8 +132,8 @@ export default function SelectInput(props: Props) {
             name={props.id}
             placeholder=""
             isClearable={props.optional}
-            classNames={CLASSNAMES}
-            styles={STYLES}
+            classNames={CLASSNAMES as ClassNamesConfig<SelectOption, false>}
+            styles={STYLES as StylesConfig<SelectOption, false>}
             options={options}
             autoFocus={props.autofocus}
             value={selectedOption}

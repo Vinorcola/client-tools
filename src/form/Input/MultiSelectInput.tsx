@@ -1,5 +1,5 @@
 import { useMemo } from "react"
-import Select from "react-select"
+import Select, { ClassNamesConfig, StylesConfig } from "react-select"
 
 import FormLine from "../FormLine.js"
 import { useInputState } from "../index.js"
@@ -40,8 +40,8 @@ export default function MultiSelectInput(props: Props) {
             name={props.id}
             placeholder=""
             isClearable={props.optional}
-            classNames={CLASSNAMES}
-            styles={STYLES}
+            classNames={CLASSNAMES as ClassNamesConfig<SelectOption, true>}
+            styles={STYLES as StylesConfig<SelectOption, true>}
             options={options}
             autoFocus={props.autofocus}
             value={selectedOptions}
