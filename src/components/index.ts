@@ -1,5 +1,7 @@
 export { default as ActionController } from "./ActionContainer.js"
+export { default as AttachedFile } from "./AttachedFile.js"
 export { default as AttributesSection } from "./AttributesSection.js"
+export { default as BooleanDisplayer } from "./BooleanDisplayer.js"
 export { default as DebugContent } from "./DebugContent.js"
 export { default as DescriptionSection } from "./DescriptionSection.js"
 export {
