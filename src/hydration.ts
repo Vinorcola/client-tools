@@ -2,6 +2,10 @@ export function hydrateBoolean(input: string): boolean {
     return input === "true"
 }
 
+export function dehydrateBoolean(input: boolean): string {
+    return input ? "true" : "false"
+}
+
 export function hydrateDate(input: string): Date {
     return new Date(`${input}T12:00:00Z`)
 }
