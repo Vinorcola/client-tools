@@ -43,13 +43,13 @@
   "scripts": {
     "build": "tsc && cp src/styles.css lib/styles.css",
     "lint": "vp fmt && vp lint",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run lint",
-    "preversion": "npm run lint",
+    "prepare": "vpr build",
+    "prepublishOnly": "vpr lint",
+    "preversion": "vpr lint",
     "version": "git add -A .",
     "postversion": "git push && git push --tags"
   },
-  "devDependencies": {
+  "dependencies": {
     "@headlessui/react": "^2.2.10",
     "@tanstack/react-query": "^5.108.2",
     "@tanstack/react-query-devtools": "^5.108.2",
@@ -57,6 +57,8 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vinorcola/dynamic-table": "^1.4.2",
+    "@vinorcola/utils": "^1.0.5",
+    "daisyui": "^5.8.2",
     "eslint-plugin-perfectionist": "^5.14.0",
     "i18next": "^27.1.5",
     "i18next-http-backend": "^4.1.0",
@@ -66,10 +68,8 @@
     "react-icons": "^5.7.0",
     "react-router": "^8.5.2",
     "react-select": "^5.10.2",
+    "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
     "vite-plus": "catalog:"
-  },
-  "dependencies": {
-    "@vinorcola/utils": "^1.0.5"
   }
 }
